@@ -4,17 +4,29 @@
 version: 2
 updates:
   - package-ecosystem: "docker"
+    # below can be used for full update of repo
     # directories:
     #   - "**/*"
     directory:  "/deployments/gpu-operator"
     open-pull-requests-limit: 15
     schedule:
       interval: "daily"
-      time: "14:40"
+      time: "15:05"
       timezone: "Asia/Kolkata"
     registries:
       - nvcr-repo
 
+  - package-ecosystem: "docker"
+    directory:  "/bundle/manifests"
+    open-pull-requests-limit: 15
+    schedule:
+      interval: "daily"
+      time: "15:05"
+      timezone: "Asia/Kolkata"
+    registries:
+      - nvcr-repo
+
+ 
 registries:
   nvcr-repo:
    type: "docker-registry"
