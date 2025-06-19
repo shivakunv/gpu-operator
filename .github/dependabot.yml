@@ -3,51 +3,11 @@
 
 version: 2
 updates:
-  - package-ecosystem: "gomod"
-    target-branch: main
-    directory: "/"
-    schedule:
-      interval: "daily"
-    open-pull-requests-limit: 10
-    labels:
-      - dependencies
-    groups:
-      k8sio:
-        patterns:
-          - k8s.io/*
-        exclude-patterns:
-          - k8s.io/klog/*
-
-  - package-ecosystem: "gomod"
-    target-branch: main
-    directory: "/tools"
-    schedule:
-      interval: "daily"
-    labels:
-      - dependencies
-
-  # Update GPU Operator base images.
-  - package-ecosystem: "docker"
-    directory: "/docker"
-    schedule:
-      interval: "daily"
-
-  # Update GPU Operator Validator base images.
-  - package-ecosystem: "docker"
-    directory: "/validator"
-    schedule:
-      interval: "daily"
-
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "daily"
-
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "daily"
-      time: "10:26"
+      time: "10:28"
       timezone: "Asia/Kolkata"
     registries:
       - nvcr-repo
