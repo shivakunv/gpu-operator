@@ -42,3 +42,19 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "09:45"
+      timezone: "Asia/Kolkata"
+    registries:
+      - nvcr-repo
+
+registries:
+    - nvcr-repo:
+        username: ${{ secrets.GITHUB_ACTOR }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        type: "docker-registry"
+        url: "https://nvcr.io"
