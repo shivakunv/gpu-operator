@@ -6,9 +6,10 @@ updates:
   - package-ecosystem: "docker"
     directories:
       - "**/*"
+    open-pull-requests-limit: 15
     schedule:
       interval: "daily"
-      time: "12:09"
+      time: "12:20"
       timezone: "Asia/Kolkata"
     registries:
       - nvcr-repo
