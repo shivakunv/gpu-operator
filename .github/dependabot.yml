@@ -21,10 +21,11 @@ updates:
     open-pull-requests-limit: 15
     schedule:
       interval: "daily"
-      time: "15:05"
+      time: "15:21"
       timezone: "Asia/Kolkata"
     registries:
       - nvcr-repo
+    versioning-strategy: increase
 
  
 registries:
