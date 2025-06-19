@@ -17,4 +17,4 @@ registries:
    type: "docker-registry"
    url: "https://nvcr.io"
    username: "oauth2"
-   password: ${{ secrets.GITHUB_TOKEN }}
+   password: ${{ env.GITHUB_TOKEN }}
