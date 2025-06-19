@@ -53,8 +53,8 @@ updates:
       - nvcr-repo
 
 registries:
-    - nvcr-repo:
-        username: ${{ secrets.GITHUB_ACTOR }}
-        password: ${{ secrets.GITHUB_TOKEN }}
-        type: "docker-registry"
-        url: "https://nvcr.io"
+  nvcr-repo:
+    username: ${{ secrets.GITHUB_ACTOR }}
+    password: ${{ secrets.GITHUB_TOKEN }}
+    type: "docker-registry"
+    url: "https://nvcr.io"
