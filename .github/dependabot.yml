@@ -11,7 +11,7 @@ updates:
       timezone: "Asia/Kolkata"
     registries:
       - nvcr-repo
-    insecure-external-code-execution: allowss
+    insecure-external-code-execution: allows
 
 registries:
   nvcr-repo:
