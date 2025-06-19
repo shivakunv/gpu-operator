@@ -31,5 +31,5 @@ registries:
   nvcr-repo:
    type: "docker-registry"
    url: "https://nvcr.io"
-   username: "oauth2"
+   username: ${{ github.actor }}
    password: ${{ env.GITHUB_TOKEN }}
