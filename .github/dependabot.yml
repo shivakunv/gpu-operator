@@ -4,10 +4,11 @@
 version: 2
 updates:
   - package-ecosystem: "docker"
-    directory: "/"
+    directory:
+      - "**/*"
     schedule:
       interval: "daily"
-      time: "10:59"
+      time: "12:09"
       timezone: "Asia/Kolkata"
     registries:
       - nvcr-repo
