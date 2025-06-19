@@ -4,8 +4,9 @@
 version: 2
 updates:
   - package-ecosystem: "docker"
-    directories:
-      - "**/*"
+    # directories:
+    #   - "**/*"
+    directory:  "/nvidia/k8s/dcgm-exporter"
     open-pull-requests-limit: 15
     schedule:
       interval: "daily"
