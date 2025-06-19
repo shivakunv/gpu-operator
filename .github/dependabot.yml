@@ -11,9 +11,11 @@ updates:
       timezone: "Asia/Kolkata"
     registries:
       - nvcr-repo
+    insecure-external-code-execution: allow
 
 registries:
   nvcr-repo:
    type: "docker-registry"
    url: "https://nvcr.io"
-   token: ${{ secrets.GITHUB_TOKEN }}
+   username: "oauth2"
+   password: ${{ secrets.GITHUB_TOKEN }}
