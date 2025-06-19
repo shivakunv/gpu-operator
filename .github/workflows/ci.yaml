@@ -17,9 +17,7 @@ name: CI
 on:
   push:
     branches:
-      - "pull-request/[0-9]+"
-      - main
-      - release-*
+      - main-no
 
 jobs:
   ### Configuration checks ###
