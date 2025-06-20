@@ -31,5 +31,4 @@ registries:
   nvcr-repo:
    type: "docker-registry"
    url: "https://nvcr.io"
-   username: ${{secrets.REGISTRY_USER}}
-   password: ${{secrets.REGISTRY_PASSWORD}}
+   token: ${{secrets.REGISTRY_PASSWORD}}
