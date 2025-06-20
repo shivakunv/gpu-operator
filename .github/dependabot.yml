@@ -32,4 +32,4 @@ registries:
    type: "docker-registry"
    url: "https://nvcr.io"
    username: x-access-token
-   token: ${{secrets.REGISTRY_PASSWORD}}
+   password: ${{secrets.REGISTRY_PASSWORD}}
