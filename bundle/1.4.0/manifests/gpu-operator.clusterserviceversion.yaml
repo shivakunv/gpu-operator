@@ -141,7 +141,7 @@ spec:
     - name: cuda-sample-image
       image: nvcr.io/nvidia/k8s/cuda-sample@sha256:2a30fe7e23067bc2c3f8f62a6867702a016af2b80b9f6ce861f3fea4dfd85bc2
     - name: dcgm-init-container-image
-      image: nvcr.io/nvidia/cuda@sha256:ed723a1339cddd75eb9f2be2f3476edf497a1b189c10c9bf9eb8da4a16a51a59
+      image: nvcr.io/nvidia/cuda@sha256:768ceeaebb96bd35221aa43dfcb7b66eda5e293e5847c8bba18283be653d3525
   customresourcedefinitions:
     owned:
     - name: clusterpolicies.nvidia.com
