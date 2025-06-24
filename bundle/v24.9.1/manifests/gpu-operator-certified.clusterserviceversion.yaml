@@ -217,9 +217,9 @@ spec:
     - name: driver-image-565
       image: nvcr.io/nvidia/driver@sha256:d55b57938866e538acc3a71ca32f8cf87e71c591abd4a34695ee428e7ec2fa73
     - name: device-plugin-image
-      image: nvcr.io/nvidia/k8s-device-plugin@sha256:7089559ce6153018806857f5049085bae15b3bf6f1c8bd19d8b12f707d087dea
+      image: nvcr.io/nvidia/k8s-device-plugin@sha256:964847cc3fd85ead286be1d74d961f53d638cd4875af51166178b17bba90192f
     - name: gpu-feature-discovery-image
-      image: nvcr.io/nvidia/k8s-device-plugin@sha256:7089559ce6153018806857f5049085bae15b3bf6f1c8bd19d8b12f707d087dea
+      image: nvcr.io/nvidia/k8s-device-plugin@sha256:964847cc3fd85ead286be1d74d961f53d638cd4875af51166178b17bba90192f
     - name: mig-manager-image
       image: nvcr.io/nvidia/cloud-native/k8s-mig-manager@sha256:40830d3561c14743f484d45b498141f9e86b1308e16fae3978110783927264ab
     - name: init-container-image
