@@ -201,7 +201,7 @@ spec:
   apiservicedefinitions: {}
   relatedImages:
     - name: gpu-operator-image
-      image: nvcr.io/nvidia/gpu-operator@sha256:041e75a3df84039c2dbbd4b9d67763bd212138822dbb6dbc0008858c1c6eff8d
+      image: nvcr.io/nvidia/gpu-operator@sha256:2538e26993abeb63f805ff5225896649fe0e7669f8913bbcf807b589f9153e67
     - name: dcgm-exporter-image
       image: nvcr.io/nvidia/k8s/dcgm-exporter@sha256:ecb867c5787e44f1889b257e6c03b07748689a7b293c8f1affb1d4cb449b235c
     - name: dcgm-image
@@ -853,7 +853,7 @@ spec:
                   - --leader-elect
                   - --leader-lease-renew-deadline
                   - "60s"
-                image: nvcr.io/nvidia/gpu-operator@sha256:041e75a3df84039c2dbbd4b9d67763bd212138822dbb6dbc0008858c1c6eff8d
+                image: nvcr.io/nvidia/gpu-operator@sha256:2538e26993abeb63f805ff5225896649fe0e7669f8913bbcf807b589f9153e67
                 command:
                   - gpu-operator
                 livenessProbe:
