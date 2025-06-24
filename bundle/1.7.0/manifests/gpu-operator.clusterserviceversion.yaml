@@ -209,7 +209,7 @@ spec:
   apiservicedefinitions: {}
   relatedImages:
     - name: gpu-operator-image
-      image: nvcr.io/nvidia/gpu-operator@sha256:2fe9e7ee251762a9d862e780ecb45bd2d4b2ecf976cc7195adc3cbc3cb034733
+      image: nvcr.io/nvidia/gpu-operator@sha256:2538e26993abeb63f805ff5225896649fe0e7669f8913bbcf807b589f9153e67
     - name: dcgm-exporter-image
       image: nvcr.io/nvidia/k8s/dcgm-exporter@sha256:8af02463a8b60b21202d0bf69bc1ee0bb12f684fa367f903d138df6cacc2d0ac
     - name: container-toolkit-image
@@ -489,7 +489,7 @@ spec:
                 - --leader-elect
                 command:
                 - gpu-operator
-                image: nvcr.io/nvidia/gpu-operator@sha256:2fe9e7ee251762a9d862e780ecb45bd2d4b2ecf976cc7195adc3cbc3cb034733
+                image: nvcr.io/nvidia/gpu-operator@sha256:2538e26993abeb63f805ff5225896649fe0e7669f8913bbcf807b589f9153e67
                 livenessProbe:
                   httpGet:
                     path: /healthz
