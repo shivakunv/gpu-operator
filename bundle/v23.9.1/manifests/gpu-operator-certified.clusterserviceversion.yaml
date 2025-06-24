@@ -206,13 +206,13 @@ spec:
     - name: mig-manager-image
       image: nvcr.io/nvidia/cloud-native/k8s-mig-manager@sha256:d7be3873992d23e15f2995d94be20b8f24c70d02fd0d50ad3839fec81559ed4b
     - name: init-container-image
-      image: nvcr.io/nvidia/cuda@sha256:16d5a1fccf47486d56486c45f140eab52a8500399909895808a6bbdc7dd5459e
+      image: nvcr.io/nvidia/cuda@sha256:768ceeaebb96bd35221aa43dfcb7b66eda5e293e5847c8bba18283be653d3525
     - name: gpu-operator-validator-image
       image: nvcr.io/nvidia/cloud-native/gpu-operator-validator@sha256:549ec806717ecd832a1dd219d3cb671024d005df0cfd54269441d21a0083ee51
     - name: k8s-driver-manager-image
       image: nvcr.io/nvidia/cloud-native/k8s-driver-manager@sha256:27c44f4720a4abf780217bd5e7903e4a008ebdbcf71238c4f106a0c22654776c
     - name: vfio-manager-image
-      image: nvcr.io/nvidia/cuda@sha256:16d5a1fccf47486d56486c45f140eab52a8500399909895808a6bbdc7dd5459e
+      image: nvcr.io/nvidia/cuda@sha256:768ceeaebb96bd35221aa43dfcb7b66eda5e293e5847c8bba18283be653d3525
     - name: sandbox-device-plugin-image
       image: nvcr.io/nvidia/kubevirt-gpu-device-plugin@sha256:387021553dfb16aab633228d42f63f04fa932b4f46add07527f296dfe97e5148
     - name: vgpu-device-manager-image
