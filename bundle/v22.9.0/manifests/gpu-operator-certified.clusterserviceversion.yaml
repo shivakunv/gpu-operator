@@ -136,7 +136,7 @@ spec:
     - name: dcgm-image
       image: nvcr.io/nvidia/cloud-native/dcgm@sha256:150c446598d4ab03db0fd2301b1922aabdf3e0159571c71abe4489075639b2e7
     - name: container-toolkit-image
-      image: nvcr.io/nvidia/k8s/container-toolkit@sha256:efb88937f73434994d1bbadc87b492a1df047aa9f8d6e9f5ec3b09536e6e7691
+      image: nvcr.io/nvidia/k8s/container-toolkit@sha256:0524041a9157a0e2c807f7c948c6878874f87958546ca128a3f82efd76d79b25
     - name: driver-image
       image: nvcr.io/nvidia/driver@sha256:4d1bf34d0ee9a3f5fa3fa124ab89ef13ae38dea12c92a9c8bd79b4180a205b56
     - name: driver-image-510
