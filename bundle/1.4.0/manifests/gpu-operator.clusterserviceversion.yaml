@@ -127,7 +127,7 @@ spec:
   apiservicedefinitions: {}
   relatedImages:
     - name: gpu-operator-image
-      image: nvcr.io/nvidia/gpu-operator@sha256:1a1c95d392ea2c055b09c9d074ab4d577a42d5d338109234d7a868bf2ebdfa8d
+      image: nvcr.io/nvidia/gpu-operator@sha256:2538e26993abeb63f805ff5225896649fe0e7669f8913bbcf807b589f9153e67
     - name: dcgm-exporter-image
       image: nvcr.io/nvidia/k8s/dcgm-exporter@sha256:85016e39f73749ef9769a083ceb849cae80c31c5a7f22485b3ba4aa590ec7b88
     - name: container-toolkit-image
@@ -395,7 +395,7 @@ spec:
                   - name: host-os-release
                     mountPath: "/host-etc/os-release"
                     readOnly: true
-                image: nvcr.io/nvidia/gpu-operator@sha256:1a1c95d392ea2c055b09c9d074ab4d577a42d5d338109234d7a868bf2ebdfa8d
+                image: nvcr.io/nvidia/gpu-operator@sha256:2538e26993abeb63f805ff5225896649fe0e7669f8913bbcf807b589f9153e67
                 imagePullPolicy: Always
                 name: gpu-operator
                 ports:
