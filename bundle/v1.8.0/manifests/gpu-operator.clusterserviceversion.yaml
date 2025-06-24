@@ -244,7 +244,7 @@ spec:
     - name: gpu-operator-image
       image: nvcr.io/nvidia/gpu-operator@sha256:3a0ff79c4edc24de708f82e5f9dc2946897aa4a50e8827203221ee2281008974
     - name: dcgm-exporter-image
-      image: nvcr.io/nvidia/k8s/dcgm-exporter@sha256:e37404194fa2bc2275827411049422b93d1493991fb925957f170b4b842846ff
+      image: nvcr.io/nvidia/k8s/dcgm-exporter@sha256:a1d913783fd185d78ed8b725334f75adc86eb594afe82961a73aa63c5d0ef423
     - name: dcgm-image
       image: nvcr.io/nvidia/cloud-native/dcgm@sha256:28f334d6d5ca6e5cad2cf05a255989834128c952e3c181e6861bd033476d4b2c
     - name: container-toolkit-image
