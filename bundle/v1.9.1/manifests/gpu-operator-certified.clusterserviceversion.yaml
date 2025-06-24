@@ -108,7 +108,7 @@ spec:
     - name: mig-manager-image
       image: nvcr.io/nvidia/cloud-native/k8s-mig-manager@sha256:d718dda2f9c9f0a465240772ed1ca6db44789d37255172e00637a092bdd1ba31
     - name: init-container-image
-      image: nvcr.io/nvidia/cuda@sha256:e137c897256501537e0986963889a91ec90cac029b5263fc4b229b278f5b1a02
+      image: nvcr.io/nvidia/cuda@sha256:768ceeaebb96bd35221aa43dfcb7b66eda5e293e5847c8bba18283be653d3525
     - name: gpu-operator-validator-image
       image: nvcr.io/nvidia/cloud-native/gpu-operator-validator@sha256:d7e0397249cd5099046506f32841535ea4f329f7b7583a6ddd9f75ff0f53385e
     - name: k8s-driver-manager-image
