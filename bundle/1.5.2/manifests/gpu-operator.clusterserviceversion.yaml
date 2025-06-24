@@ -138,7 +138,7 @@ spec:
     - name: dcgm-exporter-image
       image: nvcr.io/nvidia/k8s/dcgm-exporter@sha256:85016e39f73749ef9769a083ceb849cae80c31c5a7f22485b3ba4aa590ec7b88
     - name: container-toolkit-image
-      image: nvcr.io/nvidia/k8s/container-toolkit@sha256:81295a9eca36cbe5d94b80732210b8dc7276c6ef08d5a60d12e50479b9e542cd
+      image: nvcr.io/nvidia/k8s/container-toolkit@sha256:0524041a9157a0e2c807f7c948c6878874f87958546ca128a3f82efd76d79b25
     - name: driver-image
       image: nvcr.io/nvidia/driver@sha256:324e9dc265dec320207206aa94226b0c8735fd93ce19b36a415478c95826d934
     - name: device-plugin-image
