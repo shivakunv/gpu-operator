@@ -3,42 +3,22 @@
 
 version: 2
 updates:
-  - package-ecosystem: "gomod"
-    target-branch: main
-    directory: "/"
-    schedule:
-      interval: "daily"
-    open-pull-requests-limit: 10
-    labels:
-      - dependencies
-    groups:
-      k8sio:
-        patterns:
-          - k8s.io/*
-        exclude-patterns:
-          - k8s.io/klog/*
-
-  - package-ecosystem: "gomod"
-    target-branch: main
-    directory: "/tools"
-    schedule:
-      interval: "daily"
-    labels:
-      - dependencies
-
-  # Update GPU Operator base images.
   - package-ecosystem: "docker"
-    directory: "/docker"
+    # below can be used for full update of repo
+    directories:
+      - "**/*"
+    # directory:  "/deployments/gpu-operator"
+    open-pull-requests-limit: 15
     schedule:
       interval: "daily"
-
-  # Update GPU Operator Validator base images.
-  - package-ecosystem: "docker"
-    directory: "/validator"
-    schedule:
-      interval: "daily"
-
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "daily"
+      time: "00:35"
+      timezone: "Asia/Kolkata"
+    registries:
+      - nvcr-repo
+ 
+registries:
+  nvcr-repo:
+   type: "docker-registry"
+   url: "https://nvcr.io"
+   username: $oauthtoken
+   password: ${{secrets.REGISTRY_PASSWORD}}
