@@ -146,7 +146,7 @@ spec:
     - name: driver-image-450
       image: nvcr.io/nvidia/driver@sha256:dd8155a49340aaea95fd85639576e76196d0170fc023dc7782b35f7c313275b5
     - name: device-plugin-image
-      image: nvcr.io/nvidia/k8s-device-plugin@sha256:d1c61116647bb9388eb3c4e31848dd6038458b7ba33c0eb3b659d96739eceb73
+      image: nvcr.io/nvidia/k8s-device-plugin@sha256:964847cc3fd85ead286be1d74d961f53d638cd4875af51166178b17bba90192f
     - name: gpu-feature-discovery-image
       image: nvcr.io/nvidia/gpu-feature-discovery@sha256:37821ea7829def707f819ac21122cea62efdbbd640679b6004e552fb9a1e17a3
     - name: mig-manager-image
