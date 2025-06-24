@@ -135,7 +135,7 @@ spec:
     - name: driver-image
       image: nvcr.io/nvidia/driver@sha256:324e9dc265dec320207206aa94226b0c8735fd93ce19b36a415478c95826d934
     - name: device-plugin-image
-      image: nvcr.io/nvidia/k8s-device-plugin@sha256:45b459c59d13a1ebf37260a33c4498046d4ade7cc243f2ed71115cd81054cd85
+      image: nvcr.io/nvidia/k8s-device-plugin@sha256:964847cc3fd85ead286be1d74d961f53d638cd4875af51166178b17bba90192f
     - name: gpu-feature-discovery-image
       image: nvcr.io/nvidia/gpu-feature-discovery@sha256:82e6f61b715d710c60ac14be78953336ea5dbc712244beb51036139d1cc8d526
     - name: cuda-sample-image
