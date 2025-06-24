@@ -100,7 +100,7 @@ spec:
     - name: container-toolkit-image
       image: nvcr.io/nvidia/k8s/container-toolkit@sha256:5f826e306d093332a86afa7d1e96218b5bdda8d33067931cff7914f6bb2994ee
     - name: driver-image
-      image: nvcr.io/nvidia/driver@sha256:35c8231e28e572b148699d52a5f5c9745556fd32ab4160da68d0fc84234c1309
+      image: nvcr.io/nvidia/driver@sha256:7d9d069db7c5ee37b6c6e6b18464552fa99716354fe658ce780eae6ba4c0bc21
     - name: device-plugin-image
       image: nvcr.io/nvidia/k8s-device-plugin@sha256:69171f906efe4bbabe31688343e59feea08a7e0ef8b0d9efb466abfa153aec16
     - name: gpu-feature-discovery-image
