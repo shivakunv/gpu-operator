@@ -92,7 +92,7 @@ spec:
   apiservicedefinitions: {}
   relatedImages:
     - name: gpu-operator-image
-      image: nvcr.io/nvidia/gpu-operator@sha256:173639a16409d7aeba2f5ca7ccd6260ea621d280a24b8933089d6df0623bb657
+      image: nvcr.io/nvidia/gpu-operator@sha256:2538e26993abeb63f805ff5225896649fe0e7669f8913bbcf807b589f9153e67
     - name: dcgm-exporter-image
       image: nvcr.io/nvidia/k8s/dcgm-exporter@sha256:8546a3e1ca8e642d2dbbfde13ee439e8137513be9886f9fe51f4fa9c4db80198
     - name: dcgm-image
@@ -587,7 +587,7 @@ spec:
               containers:
               - args:
                   - --leader-elect
-                image: nvcr.io/nvidia/gpu-operator@sha256:173639a16409d7aeba2f5ca7ccd6260ea621d280a24b8933089d6df0623bb657
+                image: nvcr.io/nvidia/gpu-operator@sha256:2538e26993abeb63f805ff5225896649fe0e7669f8913bbcf807b589f9153e67
                 command:
                   - gpu-operator
                 livenessProbe:
