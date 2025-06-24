@@ -167,7 +167,7 @@ spec:
     - name: driver-image-470
       image: nvcr.io/nvidia/driver@sha256:b4517810f2884f345b4f2323e83e41d28f54cdc6e2caf0690bb7ed4f3947dbcc
     - name: device-plugin-image
-      image: nvcr.io/nvidia/k8s-device-plugin@sha256:f1617c3fe54fd9f6d4a00358e5da1a9fa9e8963a4ef6b3ed06f47d4971ddff4b
+      image: nvcr.io/nvidia/k8s-device-plugin@sha256:964847cc3fd85ead286be1d74d961f53d638cd4875af51166178b17bba90192f
     - name: gpu-feature-discovery-image
       image: nvcr.io/nvidia/gpu-feature-discovery@sha256:878a6162a4fa0b61dae02c7cfc13ba4d28bb06f92fd62d0c521633ab507d675a
     - name: mig-manager-image
