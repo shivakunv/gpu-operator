@@ -144,7 +144,7 @@ spec:
               fieldPath: status.hostIP
         - name: GPU_DIRECT_RDMA_ENABLED
           value: "true"
-        image: nvcr.io/nvidia/driver:525.85.03-ubuntu22.04
+        image: nvcr.io/nvidia/driver:575.57.08-ubuntu22.04
         imagePullPolicy: IfNotPresent
         lifecycle:
           preStop:
@@ -212,7 +212,7 @@ spec:
         env:
         - name: NVIDIA_VISIBLE_DEVICES
           value: void
-        image: nvcr.io/nvidia/driver:525.85.03-ubuntu22.04
+        image: nvcr.io/nvidia/driver:575.57.08-ubuntu22.04
         imagePullPolicy: IfNotPresent
         livenessProbe:
           exec:

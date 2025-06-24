@@ -156,7 +156,7 @@ spec:
           value: foo
         - name: BAR
           value: bar
-        image: nvcr.io/nvidia/driver:525.85.03-ubuntu22.04
+        image: nvcr.io/nvidia/driver:575.57.08-ubuntu22.04
         imagePullPolicy: Always
         lifecycle:
           preStop:

@@ -146,7 +146,7 @@ spec:
           value: "true"
         - name: USE_HOST_MOFED
           value: "true"
-        image: nvcr.io/nvidia/driver:525.85.03-ubuntu22.04
+        image: nvcr.io/nvidia/driver:575.57.08-ubuntu22.04
         imagePullPolicy: IfNotPresent
         lifecycle:
           preStop:
@@ -216,7 +216,7 @@ spec:
           value: void
         - name: USE_HOST_MOFED
           value: "true"
-        image: nvcr.io/nvidia/driver:525.85.03-ubuntu22.04
+        image: nvcr.io/nvidia/driver:575.57.08-ubuntu22.04
         imagePullPolicy: IfNotPresent
         livenessProbe:
           exec:
