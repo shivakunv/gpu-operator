@@ -1,0 +1,28 @@
+name: Renovate
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Renovate
+        uses: docker://renovate/renovate:latest
+        with:
+          args: --config .github/renovate.json
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_USER: ${{ secrets.GITHUB_USER }}
+            GITHUB_EMAIL: ${{ secrets.GITHUB_EMAIL }}
+            GITHUB_NAME: ${{ secrets.GITHUB_NAME }}
+            GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
+            GITHUB_REPOSITORY_OWNER: ${{ secrets.GITHUB_REPOSITORY_OWNER }}
+            GITHUB_REPOSITORY_URL: ${{ secrets.GITHUB_REPOSITORY_URL }}
+            GITHUB_REPOSITORY_NAME: ${{ secrets.GITHUB_REPOSITORY_NAME }}
+            GITHUB_REPOSITORY_OWNER_NAME: ${{ secrets.GITHUB_REPOSITORY_OWNER_NAME }}
+            

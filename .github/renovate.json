@@ -1,0 +1,19 @@
+{
+    "extends": ["config:base"],
+    "hostRules": [
+      {
+        "hostType": "docker",
+        "hostName": "nvcr.io",
+        "username": "$oauthtoken",
+        "password": "${{ secrets.REGISTRY_PASSWORD }}"
+      }
+    ],
+    "packageRules": [
+      {
+        "matchManagers": ["helm", "helm-values"],
+        "matchPaths": ["deployments/gpu-operator/**"],
+        "groupName": "helm-updates"
+      }
+    ]
+  }
+  
