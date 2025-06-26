@@ -7,7 +7,7 @@ module.exports = {
       hostType: "docker",
       matchHost: "nvcr.io",
       username: "$oauthtoken",
-      password: "***********"
+      password: process.env.RENOVATE_TOKEN
     }
   ],
   customManagers: [
