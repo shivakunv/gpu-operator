@@ -1,5 +1,6 @@
 module.exports = {
   platform: "github",
+  autodiscover: true,
   hostRules: [
     {
       hostType: "docker",
