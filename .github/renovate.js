@@ -1,6 +1,7 @@
 module.exports = {
   platform: "github",
-  autodiscover: true,
+  autodiscover: true, // will work for current repo updates
+  repositories: ["https://github.com/shivakunv/gpu-operator.git"], // should be commented out as it is not needed in case of non forked repos
   hostRules: [
     {
       hostType: "docker",
