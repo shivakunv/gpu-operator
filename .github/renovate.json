@@ -7,7 +7,7 @@
       "hostType": "docker",
       "hostName": "nvcr.io",
       "username": "$oauthtoken",
-      "password": "${{ env.REGISTRY_PASSWORD }}"
+      "password": "${{ env.RENOVATE_TOKEN }}"
     }
   ],
   "fileMatch": ["^deployments/gpu-operator/.*\\.ya?ml$"],
