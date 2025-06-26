@@ -1,19 +1,23 @@
-{
-    "extends": ["config:base"],
-    "hostRules": [
-      {
-        "hostType": "docker",
-        "hostName": "nvcr.io",
-        "username": "$oauthtoken",
-        "password": "${{ secrets.REGISTRY_PASSWORD }}"
-      }
-    ],
-    "packageRules": [
-      {
-        "matchManagers": ["helm", "helm-values"],
-        "matchPaths": ["deployments/gpu-operator/**"],
-        "groupName": "helm-updates"
-      }
-    ]
-  }
-  
+module.exports = {
+  platform: "github",
+  repositories: ["https://github.com/shivakunv/gpu-operator.git"],
+  extends: ["config:base"],
+  hostRules: [
+    {
+      hostType: "docker",
+      hostName: "nvcr.io",
+      username: "$oauthtoken",
+      password: "${{ secrets.REGISTRY_PASSWORD }}"
+    }
+  ],
+
+  fileMatch: ["^deployments/gpu-operator/.*\\.ya?ml$"],
+  customManagers: [
+    {
+      customType: "regex",
+      fileMatch: ["^deployments/gpu-operator/.*\\.ya?ml$"],
+      matchStrings: ["^values:.*$"],
+      datasourceTemplate: "helm-values",
+    }
+  ]
+};
