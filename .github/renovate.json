@@ -15,8 +15,10 @@
     {
       "customType": "regex",
       "fileMatch": ["^deployments/gpu-operator/.*\\.ya?ml$"],
-      "matchStrings": ["^values:.*$"],
-      "datasourceTemplate": "helm-values"
+      "matchStrings": [
+        "image:\\s*\"?(?<depName>[^:@\"]+)(?::(?<currentValue>[\\w.\\-]+))?\"?"
+      ],
+      "datasourceTemplate": "docker"
     }
   ]
 }
