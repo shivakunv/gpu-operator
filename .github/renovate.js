@@ -13,7 +13,7 @@ module.exports = {
   customManagers: [
     {
       customType: "regex",
-      managerFilePatterns: ["/^deployments/gpu-operator/.*\\.ya?ml$/"],
+      managerFilePatterns: ["^deployments/gpu-operator/.*\\.ya?ml$"],
       matchStrings: [
         "image:\\s*\"?(?<depName>[^:@\"]+)(?::(?<currentValue>[\\w.\\-]+))?\"?"
       ],
