@@ -2,7 +2,9 @@ module.exports = {
   platform: "github",
   autodiscover: true, // will work for current repo updates
   forkProcessing: "enabled",
-  repositories: ["https://github.com/shivakunv/gpu-operator.git"],
+  onboarding: false,
+  enabled: true,
+  // repositories: ["https://github.com/shivakunv/gpu-operator.git"],
   hostRules: [
     {
       hostType: "docker",
