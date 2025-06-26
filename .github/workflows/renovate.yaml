@@ -1,8 +1,8 @@
 name: Renovate
 
 on:
-  pull_request:
-    branch: [main]
+  schedule:
+    - cron: '36 11 * * *'
 
 jobs:
   renovate:
