@@ -1,16 +1,16 @@
 module.exports = {
   platform: "github",
-  autodiscover: true, // will work for current repo updates
+  // autodiscover: true, // will work for current repo updates
+  // repository: "https://github.com/shivakunv/gpu-operator.git",
   forkProcessing: "enabled",
   onboarding: false,
   enabled: true,
-  // repositories: ["https://github.com/shivakunv/gpu-operator.git"],
   hostRules: [
     {
       hostType: "docker",
       matchHost: "nvcr.io",
       username: "$oauthtoken",
-      password: process.env.RENOVATE_TOKEN
+      password: process.env.REGISTRY_PASSWORD
     }
   ],
   customManagers: [
