@@ -1,7 +1,7 @@
 {
   "platform": "github",
   "repositories": ["https://github.com/shivakunv/gpu-operator.git"],
-  "extends": ["config:base"],
+  "extends": ["config:recommended"],
   "hostRules": [
     {
       "hostType": "docker",
