@@ -10,7 +10,6 @@
       "password": "***********"
     }
   ],
-  "managerFilePatterns": ["/^deployments/gpu-operator/.*\\.ya?ml$/"],
   "customManagers": [
     {
       "customType": "regex",
