@@ -1,4 +1,5 @@
 module.exports = {
+  platform: "github",
   hostRules: [
     {
       hostType: "docker",
