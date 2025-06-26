@@ -16,5 +16,8 @@ jobs:
         uses: renovatebot/github-action@v40.1.10
         with:
           configurationFile: .github/renovate.json
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REGISTRY_PASSWORD }}
+          log-level: debug
+        env:
+          REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
   
