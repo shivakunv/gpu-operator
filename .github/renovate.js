@@ -16,13 +16,11 @@ module.exports = {
       password: process.env.RENOVATE_TOKEN,
     }
   ],
-  customManagers: [
+  regexManagers: [
     {
-      customType: "regex",
-      managerFilePatterns: ["^deployments/gpu-operator/.*\\.ya?ml$"],
-      matchStrings: [
-        "image:\\s*\"?(?<depName>[^:@\"]+)(?::(?<currentValue>[\\w.\\-]+))?\"?"
-      ],
+      fileMatch: ["^deployments/gpu-operator/.*\\.ya?ml$"],
+      matchStrings: ["image:\\s*\"?(?<depName>[^:@\"]+)(?::(?<currentValue>[\\w.\\-]+))?\"?"],
+      datasourceTemplate: "docker",
     }
   ]
 };
