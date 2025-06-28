@@ -4,7 +4,11 @@ module.exports = {
   allowedRepos: ["shivakunv/gpu-operator"],
   repository: "https://github.com/shivakunv/gpu-operator.git",
   forkProcessing: "enabled",
-  onboarding: false,
+  onboarding: true,
+  onboardingConfig: {
+    extends: ["config:base"],
+  },
+  logLevel: "debug",
   enabled: true,
   hostRules: [
     {
