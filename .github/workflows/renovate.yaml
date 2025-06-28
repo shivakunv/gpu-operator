@@ -18,6 +18,8 @@ jobs:
         with:
           configurationFile: .github/renovate.js
           token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_repos:
+            - "**"
         env:
           RENOVATE_TOKEN: ${{ secrets.REGISTRY_PASSWORD }}
   
