@@ -1,6 +1,6 @@
 {
   "platform": "github",
-  "autodiscover": true, // will work for current repo updates
+  "autodiscover": true,
   "repository": "https://github.com/shivakunv/gpu-operator.git",
   "forkProcessing": "enabled",
   "onboarding": true,
