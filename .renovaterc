@@ -1,0 +1,19 @@
+{
+  "platform": "github",
+  "autodiscover": true, // will work for current repo updates
+  "repository": "https://github.com/shivakunv/gpu-operator.git",
+  "forkProcessing": "enabled",
+  "onboarding": true,
+  "onboardingConfig": {"extends": ["config:recommended"]},
+  "enabled": true,
+  "regexManagers": [
+    {
+      "fileMatch": ["^deployment/.*\\.ya?ml$"],
+      "matchStrings": [
+        "image:\\s*(?<depName>[\\w./-]+):(?<currentValue>[\\w.-]+)"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
+    }
+  ]
+}
