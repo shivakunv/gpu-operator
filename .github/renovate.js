@@ -1,7 +1,6 @@
 module.exports = {
   platform: "github",
   autodiscover: true, // will work for current repo updates
-  allowedRepos: ["shivakunv/gpu-operator"],
   repository: "https://github.com/shivakunv/gpu-operator.git",
   forkProcessing: "enabled",
   onboarding: true,
