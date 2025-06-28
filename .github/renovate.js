@@ -5,16 +5,17 @@ module.exports = {
   forkProcessing: "enabled",
   onboarding: true,
   onboardingConfig: {
-    extends: ["config:base"],
+    extends: ["config:recommended"],
   },
-  logLevel: "debug",
   enabled: true,
   hostRules: [
     {
       hostType: "docker",
       matchHost: "nvcr.io",
       username: "$oauthtoken",
-      password: process.env.RENOVATE_TOKEN
+      password: process.env.RENOVATE_TOKEN,
+      newLoglevel: "debug",
+      logLevel: "debug",
     }
   ],
   customManagers: [
@@ -24,7 +25,8 @@ module.exports = {
       matchStrings: [
         "image:\\s*\"?(?<depName>[^:@\"]+)(?::(?<currentValue>[\\w.\\-]+))?\"?"
       ],
-      datasourceTemplate: "docker"
+      datasourceTemplate: "docker",
+      newLoglevel: "debug",
     }
   ]
 };
