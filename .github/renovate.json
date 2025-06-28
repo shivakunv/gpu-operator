@@ -6,6 +6,7 @@
   "onboarding": true,
   "onboardingConfig": {"extends": ["config:recommended"]},
   "enabled": true,
+  "enabledManagers": ["regex"],
   "regexManagers": [
     {
       "fileMatch": ["^deployment/.*\\.ya?ml$"],
