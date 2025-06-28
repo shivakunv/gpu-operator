@@ -14,8 +14,6 @@ module.exports = {
       matchHost: "nvcr.io",
       username: "$oauthtoken",
       password: process.env.RENOVATE_TOKEN,
-      newLoglevel: "debug",
-      logLevel: "debug",
     }
   ],
   customManagers: [
@@ -25,8 +23,6 @@ module.exports = {
       matchStrings: [
         "image:\\s*\"?(?<depName>[^:@\"]+)(?::(?<currentValue>[\\w.\\-]+))?\"?"
       ],
-      datasourceTemplate: "docker",
-      newLoglevel: "debug",
     }
   ]
 };

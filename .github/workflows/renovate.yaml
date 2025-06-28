@@ -20,4 +20,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
         env:
           RENOVATE_TOKEN: ${{ secrets.REGISTRY_PASSWORD }}
+          LOG_LEVEL: debug
   
