@@ -18,6 +18,7 @@ jobs:
         with:
           # configurationFile: .github/renovate.js
           token: ${{ secrets.GITHUB_TOKEN }}
+          autodiscover: true
         env:
           RENOVATE_TOKEN: ${{ secrets.REGISTRY_PASSWORD }}
           LOG_LEVEL: debug
