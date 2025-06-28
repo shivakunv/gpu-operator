@@ -4,9 +4,7 @@ module.exports = {
   repository: "https://github.com/shivakunv/gpu-operator.git",
   forkProcessing: "enabled",
   onboarding: true,
-  onboardingConfig: {
-    extends: ["config:recommended"],
-  },
+  onboardingConfig: {"extends": ["config:recommended"]},
   enabled: true,
   hostRules: [
     {
@@ -16,11 +14,14 @@ module.exports = {
       password: process.env.RENOVATE_TOKEN,
     }
   ],
-  regexManagers: [
+  customManagers: [
     {
-      fileMatch: ["^deployments/gpu-operator/.*\\.ya?ml$"],
-      matchStrings: ["image:\\s*\"?(?<depName>[^:@\"]+)(?::(?<currentValue>[\\w.\\-]+))?\"?"],
-      datasourceTemplate: "docker",
+      customType: "regex",
+      managerFilePatterns: ["/^deployments/gpu-operator/.*\\.ya?ml$/"],
+      matchStrings: [
+        "image:\\s*\"?(?<depName>[^:@\"]+)(?::(?<currentValue>[\\w.\\-]+))?\"?"
+      ],
+      datasourceTemplate: "docker"
     }
   ]
 };
