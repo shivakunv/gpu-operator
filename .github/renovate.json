@@ -6,10 +6,11 @@
   "onboarding": true,
   "onboardingConfig": {"extends": ["config:recommended"]},
   "enabled": true,
-  "enabledManagers": ["regex"],
-  "regexManagers": [
+  "enabledManagers": ["custom.regex"],
+  "customManagers": [
     {
-      "fileMatch": ["^deployment/.*\\.ya?ml$"],
+      "customType": "regex",
+      "managerFilePatterns": ["/^deployment/.*\\.ya?ml$/"],
       "matchStrings": [
         "image:\\s*(?<depName>[\\w./-]+):(?<currentValue>[\\w.-]+)"
       ],
