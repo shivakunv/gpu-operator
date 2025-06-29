@@ -21,5 +21,4 @@ jobs:
         env:
           RENOVATE_TOKEN: ${{ secrets.REGISTRY_PASSWORD }}
           LOG_LEVEL: debug
-          # RENOVATE_CONFIG_FILE: .renovaterc.json
   

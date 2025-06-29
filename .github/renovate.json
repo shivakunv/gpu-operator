@@ -6,6 +6,14 @@
   "autodiscover": true,
   "enabled": true,
   "enabledManagers": ["custom.regex"],
+  "hostRules": [
+    {
+      "hostType": "docker",
+      "matchHost": "nvcr.io",
+      "username": "$oauthtoken",
+      "password": "${RENOVATE_TOKEN}"
+    }
+  ],
   "customManagers": [
     {
       "customType": "regex",
