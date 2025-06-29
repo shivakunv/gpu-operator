@@ -5,6 +5,7 @@
   "enabledManagers": ["custom.regex"],
   "customManagers": [
     {
+      "autodiscover": true,
       "customType": "regex",
       "managerFilePatterns": ["/^deployments/gpu-operator/.*\\.ya?ml$/"],
       "matchStrings": [
