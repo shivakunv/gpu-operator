@@ -5,6 +5,8 @@
   "enabledManagers": ["custom.regex"],
   "customManagers": [
     {
+      "onboarding": true,
+      "onboardingConfig": {"extends": ["config:recommended"]},
       "autodiscover": true,
       "customType": "regex",
       "managerFilePatterns": ["/^deployments/gpu-operator/.*\\.ya?ml$/"],
