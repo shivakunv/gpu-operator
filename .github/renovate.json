@@ -1,10 +1,6 @@
 {
-  "platform": "github",
-  "autodiscover": true,
   "repository": "https://github.com/shivakunv/gpu-operator.git",
   "forkProcessing": "enabled",
-  "onboarding": true,
-  "onboardingConfig": {"extends": ["config:recommended"]},
   "enabled": true,
   "enabledManagers": ["regex"],
   "regexManagers": [
