@@ -1,15 +1,27 @@
 {
-  "enabled": true,
-  "enabledManagers": ["custom.regex"],
-  "customManagers": [
+  "hostRules": [
     {
-      "customType": "regex",
-      "managerFilePatterns": ["/^deployments/gpu-operator/.*\\.ya?ml$/"],
+      "hostType": "docker",
+      "matchHost": "nvcr.io",
+      "username": "$oauth2accesstoken",
+      "password": "{{ REGISTRY_PASSWORD }}"
+    }
+  ],
+  "pinDigests": true,
+  "enabledManagers": ["regex"],
+  "regexManagers": [
+    {
+      "fileMatch": ["^deployments/gpu-operator/.*\\.ya?ml$", "^bundle/manifests/.*\\.ya?ml$"],
       "matchStrings": [
-        "image:\\s*(?<depName>[\\w./-]+):(?<currentValue>[\\w.-]+)"
+        "image\\s*:\\s*(?<depName>[\\w./-]+)@sha256:(?<currentValue>[a-fA-F0-9]{64})",
+        "image\\s*:\\s*(?<depName>[\\w./-]+):(?<currentValue>[\\w.-]+)",
+        "(?:(?:repository|image|name)\\s*:\\s*(?<depName>[\\w./-]+)[\\s\\S]+?)version\\s*:\\s*(?<currentValue>[\\w.-]+)",
+        "\\bvalue\\s*:\\s*(?<depName>[\\w./:-]+):(?<currentValue>[\\w.-]+)",
+        "\\bversion\\s*:\\s*(?<depName>[\\w./:-]+):(?<currentValue>[\\w.-]+)"
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
     }
-  ]
+  ],
+  "schedule": ["after 3am and before 4am every day"]
 }
