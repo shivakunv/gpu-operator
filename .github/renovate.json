@@ -1,10 +1,8 @@
 {
-  "onboarding": true,
-  "enabled": true,
-  "extends": ["config:base"],
-  "pinDigests": true,
+  "extends": ["local>shivakunv/renovate"],
   "ignorePaths": ["vendor/**"],
   "enabledManagers": ["custom.regex"],
+  "pinDigests": true,
   "customManagers": [
     {
       "customType": "regex",
@@ -22,14 +20,5 @@
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
     }
-  ],
-  "hostRules": [
-    {
-      "hostType": "docker",
-      "matchHost": "nvcr.io",
-      "username": "$oauthtoken",
-      "password": "{{ REGISTRY_PASSWORD }}"
-    }
-  ],
-  "schedule": ["after 3am and before 4am every day"]
+  ]
 }
