@@ -3,7 +3,7 @@
     {
       "hostType": "docker",
       "matchHost": "nvcr.io",
-      "username": "{{ GITHUB_ACTOR }}",
+      "username": "$oauthtoken",
       "password": "{{ REGISTRY_PASSWORD }}"
     }
   ],
