@@ -24,7 +24,9 @@
         "(?:(?:repository|image|name)\\s*:\\s*(?<depName>[\\w./-]+)[\\s\\S]+?)version\\s*:\\s*(?<currentValue>[\\w.-]+)",
         "\\bvalue\\s*:\\s*(?<depName>[\\w./:-]+):(?<currentValue>[\\w.-]+)",
         "\\bversion\\s*:\\s*(?<depName>[\\w./:-]+):(?<currentValue>[\\w.-]+)"
-      ]
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
     }
   ],
   "schedule": ["after 3am and before 4am every day"]
