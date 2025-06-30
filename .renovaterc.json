@@ -7,7 +7,7 @@
       "password": "{{ REGISTRY_PASSWORD }}"
     }
   ],
-  "enabled": false,
+  "enabled": true,
   "extends": ["config:base"],
   "pinDigests": true,
   "enabledManagers": ["custom.regex"],
