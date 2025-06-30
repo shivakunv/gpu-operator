@@ -1,5 +1,5 @@
 {
-  "extends": ["local>shivakunv/renovate"],
+  "extends": ["github:shivakunv/renovate"],
   "ignorePaths": ["vendor/**"],
   "enabledManagers": ["custom.regex"],
   "pinDigests": true,
