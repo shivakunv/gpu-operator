@@ -82,7 +82,7 @@ operator:
   initContainer:
     repository: nvcr.io/nvidia
     image: cuda
-    version: 12.8.1-base-ubi9
+    version: 13.0.0-base-ubi9
     imagePullPolicy: IfNotPresent
   tolerations:
   - key: "node-role.kubernetes.io/master"
@@ -234,7 +234,7 @@ toolkit:
   enabled: true
   repository: nvcr.io/nvidia/k8s
   image: container-toolkit
-  version: v1.17.7-ubuntu20.04
+  version: v1.17.8-ubuntu20.04
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env: []
@@ -245,7 +245,7 @@ devicePlugin:
   enabled: true
   repository: nvcr.io/nvidia
   image: k8s-device-plugin
-  version: v0.17.1
+  version: v0.17.3
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   args: []
@@ -303,7 +303,7 @@ dcgm:
   enabled: false
   repository: nvcr.io/nvidia/cloud-native
   image: dcgm
-  version: 4.1.1-2-ubuntu22.04
+  version: 4.3.1-1-ubuntu22.04
   imagePullPolicy: IfNotPresent
   args: []
   env: []
@@ -313,7 +313,7 @@ dcgmExporter:
   enabled: true
   repository: nvcr.io/nvidia/k8s
   image: dcgm-exporter
-  version: 4.2.3-4.1.1-ubuntu22.04
+  version: 4.3.1-4.4.1-ubuntu22.04
   imagePullPolicy: IfNotPresent
   env:
     - name: DCGM_EXPORTER_LISTEN
@@ -361,7 +361,7 @@ gfd:
   enabled: true
   repository: nvcr.io/nvidia
   image: k8s-device-plugin
-  version: v0.17.2
+  version: v0.17.3
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env:
@@ -375,7 +375,7 @@ migManager:
   enabled: true
   repository: nvcr.io/nvidia/cloud-native
   image: k8s-mig-manager
-  version: v0.12.1-ubuntu20.04
+  version: v0.12.3-ubuntu20.04
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env:
@@ -492,7 +492,7 @@ vfioManager:
   enabled: true
   repository: nvcr.io/nvidia
   image: cuda
-  version: 12.8.1-base-ubi9
+  version: 13.0.0-base-ubi9
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env: []
