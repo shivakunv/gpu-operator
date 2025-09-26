@@ -25,6 +25,7 @@
   "ignorePaths": ["vendor/**"],
   "enabledManagers": ["custom.regex"],
   "recreateWhen": "always",
+  "recreateClosed": true,
   "separateMultipleMajor": false,
   "separateMinorPatch": false,
   "customManagers": [
@@ -88,6 +89,12 @@
     {
       "matchPackageNames": ["nvcr.io/nvidia/driver"],
       "enabled": false
+    },
+    {
+      "matchDatasources": ["docker"],
+      "pinDigests": true,
+      "digest": false,
+      "groupName": "{{depName}} (tag+digest)"
     },
     {
       "matchDatasources": ["*"],
