@@ -458,10 +458,9 @@ vgpuDeviceManager:
 
 vfioManager:
   enabled: true
-  # TODO: update to a k8s-driver-manager image from nvcr.io once the next version is published
-  repository: ghcr.io/nvidia
+  repository: nvcr.io/nvidia/cloud-native
   image: k8s-driver-manager
-  version: 69eec274
+  version: v0.10.0
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env: []
