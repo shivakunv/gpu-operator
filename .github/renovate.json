@@ -101,7 +101,8 @@
     },
     {
       "matchPackageNames": ["nvcr.io/nvidia/k8s/container-toolkit"],
-      "versioning": "regex:^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:-rc\\.(?<build>\\d+))?$",
+      "versioning": "regex:^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:-rc\\.(?<prerelease>\\d+))?$",
+      "ignoreUnstable": false,
       "separateMajorMinor": false
     },
     {
