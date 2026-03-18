@@ -19,7 +19,6 @@ variables:
   # Define the public staging registry
   STAGING_REGISTRY: ghcr.io/nvidia
   STAGING_VERSION: ${CI_COMMIT_SHORT_SHA}
-  GIT_SUBMODULE_PATHS: cnt-ci
 
 .image-pull:
   stage: image-build
@@ -221,7 +220,6 @@ mock-image-publish:
   before_script:
     - apk add --no-cache openssh-client rsync bash sshpass curl
   script:
-    - source cnt-ci/infrastructure-info
     - chmod 400 ${VSPHERE_SSH_PRIVATE_KEY}
     - export private_key="${VSPHERE_SSH_PRIVATE_KEY}"
     - export instance_hostname="${instance_hostname}"
@@ -254,14 +252,12 @@ e2e_tests_containerd_k8s1_27:
 
 .launch_infra:
   extends:
-    - .cnt_kube_setup
     - .e2e_defaults
     - .infra_setup_defaults
     - .schedule_defaults
 
 .clean_infra:
   extends:
-    - .cnt_kube_clean
     - .e2e_defaults
     - .schedule_defaults
 
