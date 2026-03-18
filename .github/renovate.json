@@ -69,6 +69,7 @@
         "nvcr.io/nvidia/cloud-native/k8s-kata-manager",
         "nvcr.io/nvidia/cloud-native/vgpu-device-manager",
         "nvcr.io/nvidia/cloud-native/k8s-cc-manager",
+        "ghcr.io/nvidia/k8s-cc-manager",
         "nvcr.io/nvidia/cloud-native/nvidia-sandbox-device-plugin",
         "nvcr.io/nvidia/kubevirt-gpu-device-plugin",
         "nvcr.io/nvidia/k8s-device-plugin"
@@ -114,6 +115,15 @@
       "groupName": "{{depName}}",
       "branchTopic": "{{depName}}",
       "commitMessageTopic": "{{depName}}"
+    },
+    {
+      "matchPackageNames": [
+        "nvcr.io/nvidia/cloud-native/k8s-cc-manager",
+        "ghcr.io/nvidia/k8s-cc-manager"
+      ],
+      "groupName": "k8s-cc-manager",
+      "branchTopic": "k8s-cc-manager",
+      "commitMessageTopic": "k8s-cc-manager"
     }
   ]
 }
