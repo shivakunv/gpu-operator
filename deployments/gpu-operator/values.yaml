@@ -508,7 +508,7 @@ kataSandboxDevicePlugin:
 ccManager:
   enabled: true
   defaultMode: "on"
-  repository: nvcr.io/nvidia/cloud-native
+  repository: ghcr.io/nvidia
   image: k8s-cc-manager
   version: v0.1.1
   imagePullPolicy: IfNotPresent
