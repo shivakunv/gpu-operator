@@ -68,7 +68,7 @@
         "nvcr.io/nvidia/cloud-native/k8s-driver-manager",
         "nvcr.io/nvidia/cloud-native/k8s-kata-manager",
         "nvcr.io/nvidia/cloud-native/vgpu-device-manager",
-        "ghcr.io/nvidia/k8s-cc-manager",
+        "nvcr.io/nvidia/cloud-native/k8s-cc-manager",
         "nvcr.io/nvidia/cloud-native/nvidia-sandbox-device-plugin",
         "nvcr.io/nvidia/kubevirt-gpu-device-plugin",
         "nvcr.io/nvidia/k8s-device-plugin"

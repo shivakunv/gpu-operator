@@ -209,7 +209,7 @@ toolkit:
   enabled: true
   repository: nvcr.io/nvidia/k8s
   image: container-toolkit
-  version: v1.18.0
+  version: v1.19.0
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env: []
@@ -496,7 +496,7 @@ sandboxDevicePlugin:
 # Kata sandbox device plugin (used when sandboxWorkloads.mode is "kata").
 kataSandboxDevicePlugin:
   enabled: true
-  repository: ghcr.io/nvidia
+  repository: nvcr.io/nvidia/cloud-native
   image: nvidia-sandbox-device-plugin
   version: "v0.0.1"
   imagePullPolicy: IfNotPresent
@@ -508,7 +508,7 @@ kataSandboxDevicePlugin:
 ccManager:
   enabled: true
   defaultMode: "on"
-  repository: ghcr.io/nvidia
+  repository: nvcr.io/nvidia/cloud-native
   image: k8s-cc-manager
   version: v0.1.1
   imagePullPolicy: IfNotPresent
