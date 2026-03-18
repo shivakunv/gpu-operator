@@ -181,7 +181,7 @@ driver:
     image: k8s-driver-manager
     # When choosing a different version of k8s-driver-manager, DO NOT downgrade to a version lower than v0.6.4
     # to ensure k8s-driver-manager stays compatible with gpu-operator starting from v24.3.0
-    version: v0.10.0
+    version: v0.9.0
     imagePullPolicy: IfNotPresent
     env: []
   env: []
@@ -266,7 +266,7 @@ dcgm:
   enabled: false
   repository: nvcr.io/nvidia/cloud-native
   image: dcgm
-  version: 4.5.2-1-ubuntu22.04
+  version: 4.5.1-1-ubi9
   imagePullPolicy: IfNotPresent
   args: []
   env: []
@@ -276,7 +276,7 @@ dcgmExporter:
   enabled: true
   repository: nvcr.io/nvidia/k8s
   image: dcgm-exporter
-  version: 4.5.1-4.8.0-distroless
+  version: 4.4.2-4.7.1-distroless
   imagePullPolicy: IfNotPresent
   env: []
   resources: {}
@@ -437,7 +437,7 @@ vgpuManager:
     image: k8s-driver-manager
     # When choosing a different version of k8s-driver-manager, DO NOT downgrade to a version lower than v0.6.4
     # to ensure k8s-driver-manager stays compatible with gpu-operator starting from v24.3.0
-    version: v0.10.0
+    version: v0.9.0
     imagePullPolicy: IfNotPresent
     env: []
    # kernel module configuration for vGPU manager
@@ -460,7 +460,7 @@ vfioManager:
   enabled: true
   repository: nvcr.io/nvidia/cloud-native
   image: k8s-driver-manager
-  version: v0.10.0
+  version: v0.9.0
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env: []
@@ -470,7 +470,7 @@ vfioManager:
     image: k8s-driver-manager
     # When choosing a different version of k8s-driver-manager, DO NOT downgrade to a version lower than v0.6.4
     # to ensure k8s-driver-manager stays compatible with gpu-operator starting from v24.3.0
-    version: v0.10.0
+    version: v0.9.0
     imagePullPolicy: IfNotPresent
     env: []
 
@@ -486,7 +486,7 @@ sandboxDevicePlugin:
   enabled: true
   repository: nvcr.io/nvidia
   image: kubevirt-gpu-device-plugin
-  version: v1.5.0
+  version: v1.4.0
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   args: []
@@ -498,7 +498,7 @@ kataSandboxDevicePlugin:
   enabled: true
   repository: ghcr.io/nvidia
   image: nvidia-sandbox-device-plugin
-  version: "3a8894b2"
+  version: "v0.0.1"
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   args: []
