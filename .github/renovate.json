@@ -105,11 +105,6 @@
       "separateMajorMinor": false
     },
     {
-      "matchPaths": ["deployments/gpu-operator/values.yaml"],
-      "matchDatasources": ["docker"],
-      "pinDigests": false
-    },
-    {
       "matchPackageNames": ["nvcr.io/nvidia/driver"],
       "enabled": false
     },
@@ -118,6 +113,20 @@
       "groupName": "{{depName}}",
       "branchTopic": "{{depName}}",
       "commitMessageTopic": "{{depName}}"
+    },
+    {
+      "matchPackageNames": ["nvcr.io/nvidia/k8s/container-toolkit"],
+      "matchPaths": ["deployments/gpu-operator/values.yaml"],
+      "groupName": "container-toolkit-helm-values",
+      "branchTopic": "container-toolkit-helm-values",
+      "commitMessageTopic": "container-toolkit-helm-values"
+    },
+    {
+      "matchPackageNames": ["nvcr.io/nvidia/k8s/container-toolkit"],
+      "matchPaths": ["bundle/manifests/gpu-operator-certified.clusterserviceversion.yaml"],
+      "groupName": "container-toolkit-olm-bundle",
+      "branchTopic": "container-toolkit-olm-bundle",
+      "commitMessageTopic": "container-toolkit-olm-bundle"
     }
   ]
 }
