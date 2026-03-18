@@ -209,7 +209,7 @@ toolkit:
   enabled: true
   repository: nvcr.io/nvidia/k8s
   image: container-toolkit
-  version: v1.19.0
+  version: v1.18.0
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env: []
@@ -498,7 +498,7 @@ kataSandboxDevicePlugin:
   enabled: true
   repository: nvcr.io/nvidia/cloud-native
   image: nvidia-sandbox-device-plugin
-  version: "v0.0.1"
+  version: v0.0.1
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   args: []
