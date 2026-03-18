@@ -510,7 +510,7 @@ ccManager:
   defaultMode: "on"
   repository: ghcr.io/nvidia
   image: k8s-cc-manager
-  version: v0.1.1
+  version: 125e77c7-distroless
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env:
