@@ -9,9 +9,6 @@ default:
 
 include:
   - local: '.common-ci.yml'
-  - project: nsv-devops/cnt-ci
-    file: cnt-ci.yml
-    ref: "2023.10.09"
 
 variables:
   # Release "devel"-tagged images off the main branch
