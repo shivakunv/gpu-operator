@@ -496,9 +496,9 @@ sandboxDevicePlugin:
 # Kata sandbox device plugin (used when sandboxWorkloads.mode is "kata").
 kataSandboxDevicePlugin:
   enabled: true
-  repository: ghcr.io/nvidia
+  repository: nvcr.io/nvidia/cloud-native
   image: nvidia-sandbox-device-plugin
-  version: "3a8894b2"
+  version: "v0.0.2"
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   args: []
