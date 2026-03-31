@@ -80,7 +80,10 @@ jobs:
     with:
       operator_image: ${{ needs.variables.outputs.operator_image }}
       operator_version: ${{ needs.variables.outputs.operator_version }}
-    secrets: inherit
+    secrets:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_SSH_KEY: ${{ secrets.AWS_SSH_KEY }}
 
   release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -92,4 +95,3 @@ jobs:
     with:
       commit_short_sha: ${{ needs.variables.outputs.commit_short_sha }}
       operator_image_base: ${{ needs.variables.outputs.operator_image_base }}
-    secrets: inherit
