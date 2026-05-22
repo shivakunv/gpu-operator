@@ -106,6 +106,12 @@
       "separateMajorMinor": false
     },
     {
+      "description": "Keep only the base gdrcopy version as the OS suffix is added at runtime",
+      "matchPackageNames": ["nvcr.io/nvidia/cloud-native/gdrdrv"],
+      "extractVersion": "^(?<version>v?\\d+\\.\\d+\\.\\d+)(?:-.*)?$",
+      "versioning": "semver"
+    },
+    {
       "description": "Skip kubevirt-gpu-device-plugin image update until Renovate preserves the required multi-arch digest",
       "matchPackageNames": ["nvcr.io/nvidia/kubevirt-gpu-device-plugin"],
       "enabled": false
