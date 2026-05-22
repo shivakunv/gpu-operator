@@ -106,6 +106,11 @@
       "separateMajorMinor": false
     },
     {
+      "description": "Skip kubevirt-gpu-device-plugin image update until Renovate preserves the required multi-arch digest",
+      "matchPackageNames": ["nvcr.io/nvidia/kubevirt-gpu-device-plugin"],
+      "enabled": false
+    },
+    {
       "matchPackageNames": ["nvcr.io/nvidia/driver"],
       "enabled": false
     },
