@@ -22,7 +22,6 @@
     ":disableDependencyDashboard"
   ],
   "forkProcessing": "enabled",
-  "allowedPostUpgradeCommands": ["bash \\.github/scripts/fix-multiarch-digest\\.sh .*"],
   "ignorePaths": ["vendor/**"],
   "enabledManagers": ["custom.regex"],
   "recreateWhen": "always",

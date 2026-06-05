@@ -22,3 +22,4 @@ jobs:
           RENOVATE_ONBOARDING: false
           RENOVATE_LOG_LEVEL: debug
           LOG_LEVEL: debug
+          RENOVATE_ALLOWED_POST_UPGRADE_COMMANDS: '["bash \\.github/scripts/fix-multiarch-digest\\.sh .*"]'
