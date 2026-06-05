@@ -22,6 +22,7 @@
     ":disableDependencyDashboard"
   ],
   "forkProcessing": "enabled",
+  "allowedPostUpgradeCommands": ["bash \\.github/scripts/fix-kubevirt-digest\\.sh .*"],
   "ignorePaths": ["vendor/**"],
   "enabledManagers": ["custom.regex"],
   "recreateWhen": "always",
@@ -77,6 +78,14 @@
       "separateMajorMinor": false
     },
     {
+      "matchPackageNames": ["nvcr.io/nvidia/kubevirt-gpu-device-plugin"],
+      "postUpgradeTasks": {
+        "commands": ["bash .github/scripts/fix-kubevirt-digest.sh {{{newValue}}}"],
+        "fileFilters": ["bundle/manifests/gpu-operator-certified.clusterserviceversion.yaml"],
+        "executionMode": "update"
+      }
+    },
+    {
       "matchPackageNames": [
         "nvcr.io/nvidia/cloud-native/k8s-mig-manager"
       ],
@@ -106,16 +115,10 @@
       "separateMajorMinor": false
     },
     {
+      "description": "Keep only the base gdrcopy version as the OS suffix is added at runtime",
       "matchPackageNames": ["nvcr.io/nvidia/cloud-native/gdrdrv"],
-      "matchPaths": ["deployments/gpu-operator/values.yaml"],
       "extractVersion": "^(?<version>v?\\d+\\.\\d+\\.\\d+)(?:-.*)?$",
       "versioning": "semver"
-    },
-    {
-      "matchPackageNames": ["nvcr.io/nvidia/cloud-native/gdrdrv"],
-      "matchPaths": ["bundle/manifests/gpu-operator-certified.clusterserviceversion.yaml"],
-      "versioning": "regex:^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$",
-      "separateMajorMinor": false
     },
     {
       "matchPackageNames": ["nvcr.io/nvidia/driver"],
