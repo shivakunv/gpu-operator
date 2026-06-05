@@ -106,10 +106,16 @@
       "separateMajorMinor": false
     },
     {
-      "description": "Keep only the base gdrcopy version as the OS suffix is added at runtime",
       "matchPackageNames": ["nvcr.io/nvidia/cloud-native/gdrdrv"],
+      "matchPaths": ["deployments/gpu-operator/values.yaml"],
       "extractVersion": "^(?<version>v?\\d+\\.\\d+\\.\\d+)(?:-.*)?$",
       "versioning": "semver"
+    },
+    {
+      "matchPackageNames": ["nvcr.io/nvidia/cloud-native/gdrdrv"],
+      "matchPaths": ["bundle/manifests/gpu-operator-certified.clusterserviceversion.yaml"],
+      "versioning": "regex:^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$",
+      "separateMajorMinor": false
     },
     {
       "matchPackageNames": ["nvcr.io/nvidia/driver"],
