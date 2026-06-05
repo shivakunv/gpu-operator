@@ -22,7 +22,7 @@
     ":disableDependencyDashboard"
   ],
   "forkProcessing": "enabled",
-  "allowedPostUpgradeCommands": ["bash \\.github/scripts/fix-kubevirt-digest\\.sh .*"],
+  "allowedPostUpgradeCommands": ["bash \\.github/scripts/fix-multiarch-digest\\.sh .*"],
   "ignorePaths": ["vendor/**"],
   "enabledManagers": ["custom.regex"],
   "recreateWhen": "always",
@@ -78,9 +78,10 @@
       "separateMajorMinor": false
     },
     {
-      "matchPackageNames": ["nvcr.io/nvidia/kubevirt-gpu-device-plugin"],
+      "matchPaths": ["bundle/manifests/gpu-operator-certified.clusterserviceversion.yaml"],
+      "matchDatasources": ["docker"],
       "postUpgradeTasks": {
-        "commands": ["bash .github/scripts/fix-kubevirt-digest.sh {{{newValue}}}"],
+        "commands": ["bash .github/scripts/fix-multiarch-digest.sh {{{depName}}} {{{newValue}}}"],
         "fileFilters": ["bundle/manifests/gpu-operator-certified.clusterserviceversion.yaml"],
         "executionMode": "update"
       }
