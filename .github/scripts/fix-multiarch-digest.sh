@@ -17,10 +17,11 @@ SHORT_NAME="${IMAGE_NAME##*/}"
 
 echo "Fetching manifest list digest for ${IMAGE_NAME}:${VERSION} via registry API ..."
 
-# Discover auth realm from the registry's WWW-Authenticate challenge
-AUTH_HEADER=$(curl -sf -I "https://${REGISTRY}/v2/" 2>/dev/null | grep -i "^www-authenticate:" | tr -d '\r' || true)
-REALM=$(printf '%s' "${AUTH_HEADER}" | grep -oE 'realm="[^"]+"' | head -1 | cut -d'"' -f2)
-SERVICE=$(printf '%s' "${AUTH_HEADER}" | grep -oE 'service="[^"]+"' | head -1 | cut -d'"' -f2)
+# Discover auth realm from the registry's WWW-Authenticate challenge.
+# Registries commonly return 401 here as part of the auth flow, so avoid -f.
+AUTH_HEADER=$(curl -sSI "https://${REGISTRY}/v2/" 2>/dev/null | grep -i "^www-authenticate:" | tr -d '\r' || true)
+REALM=$(printf '%s' "${AUTH_HEADER}" | grep -oE 'realm="[^"]+"' | head -1 | cut -d'"' -f2 || true)
+SERVICE=$(printf '%s' "${AUTH_HEADER}" | grep -oE 'service="[^"]+"' | head -1 | cut -d'"' -f2 || true)
 
 if [[ -z "${REALM}" ]]; then
   echo "WARN: Could not get auth realm from ${REGISTRY} — skipping"
@@ -28,8 +29,13 @@ if [[ -z "${REALM}" ]]; then
 fi
 
 # Get an anonymous pull token
-TOKEN=$(curl -sf "${REALM}?service=${SERVICE}&scope=repository:${REPO}:pull" \
-  | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('token', d.get('access_token', '')))")
+TOKEN_URL="${REALM}?scope=repository:${REPO}:pull"
+if [[ -n "${SERVICE}" ]]; then
+  TOKEN_URL="${TOKEN_URL}&service=${SERVICE}"
+fi
+
+TOKEN=$(curl -fsS "${TOKEN_URL}" \
+  | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('token', d.get('access_token', '')))" || true)
 
 if [[ -z "${TOKEN}" ]]; then
   echo "WARN: Could not obtain auth token for ${IMAGE_NAME} — skipping"
@@ -37,7 +43,7 @@ if [[ -z "${TOKEN}" ]]; then
 fi
 
 # Request the manifest list; the digest is in the Docker-Content-Digest response header
-DIGEST=$(curl -sf -I \
+DIGEST=$(curl -sSI \
   -H "Authorization: Bearer ${TOKEN}" \
   -H "Accept: application/vnd.docker.distribution.manifest.list.v2+json,application/vnd.oci.image.index.v1+json" \
   "https://${REGISTRY}/v2/${REPO}/manifests/${VERSION}" \
