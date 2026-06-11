@@ -141,13 +141,10 @@ func (cmd *Command) run(ctx context.Context, osArgs []string) (_ context.Context
 	var rargs Args = &stringSliceArgs{v: osArgs}
 	var args Args = &stringSliceArgs{rargs.Tail()}
 
-	if cmd.isCompletionCommand || cmd.Name == helpName {
-		tracef("special command detected, skipping pre-parse (cmd=%[1]q)", cmd.Name)
-		cmd.parsedArgs = args
-		return ctx, cmd.Action(ctx, cmd)
-	}
-
 	for _, f := range cmd.allFlags() {
+		if cmd.hasPersistentFlagOnAncestor(f) {
+			continue
+		}
 		if err := f.PreParse(); err != nil {
 			return ctx, err
 		}
@@ -213,6 +210,7 @@ func (cmd *Command) run(ctx context.Context, osArgs []string) (_ context.Context
 	}
 
 	for _, flag := range cmd.allFlags() {
+		cmd.setMultiValueParsingConfig(flag)
 		isSet := flag.IsSet()
 		if err := flag.PostParse(); err != nil {
 			return ctx, err
@@ -237,14 +235,18 @@ func (cmd *Command) run(ctx context.Context, osArgs []string) (_ context.Context
 		}()
 	}
 
-	for _, grp := range cmd.MutuallyExclusiveFlags {
-		if err := grp.check(cmd); err != nil {
-			if cmd.OnUsageError != nil {
-				err = cmd.OnUsageError(ctx, cmd, err, cmd.parent != nil)
-			} else {
-				_ = ShowSubcommandHelp(cmd)
+	// Walk the parent chain to check mutually exclusive flag groups
+	// defined on ancestor commands, since persistent flags are inherited.
+	for pCmd := cmd; pCmd != nil; pCmd = pCmd.parent {
+		for _, grp := range pCmd.MutuallyExclusiveFlags {
+			if err := grp.check(cmd); err != nil {
+				if cmd.OnUsageError != nil {
+					err = cmd.OnUsageError(ctx, cmd, err, cmd.parent != nil)
+				} else {
+					_ = ShowSubcommandHelp(cmd)
+				}
+				return ctx, err
 			}
-			return ctx, err
 		}
 	}
 
@@ -263,13 +265,12 @@ func (cmd *Command) run(ctx context.Context, osArgs []string) (_ context.Context
 		subCmd = cmd.Command(name)
 		if subCmd == nil {
 			hasDefault := cmd.DefaultCommand != ""
-			isFlagName := slices.Contains(cmd.FlagNames(), name)
 
 			if hasDefault {
 				tracef("using default command=%[1]q (cmd=%[2]q)", cmd.DefaultCommand, cmd.Name)
 			}
 
-			if isFlagName || hasDefault {
+			if hasDefault {
 				argsWithDefault := cmd.argsWithDefaultCommand(cmd.parsedArgs)
 				tracef("using default command args=%[1]q (cmd=%[2]q)", argsWithDefault, cmd.Name)
 				subCmd = cmd.Command(argsWithDefault.First())
