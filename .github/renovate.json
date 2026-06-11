@@ -1,9 +1,23 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "prHourlyLimit": 20,
-  "prConcurrentLimit": 20,
+  "prHourlyLimit": 10,
+  "prConcurrentLimit": 10,
   "dependencyDashboard": false,
   "extends": [
+    "config:recommended",
+    ":disableDependencyDashboard",
+    "config:recommended",
+    ":disableDependencyDashboard",
+    "config:recommended",
+    ":disableDependencyDashboard",
+    "config:recommended",
+    ":disableDependencyDashboard",
+    "config:recommended",
+    ":disableDependencyDashboard",
+    "config:recommended",
+    ":disableDependencyDashboard",
+    "config:recommended",
+    ":disableDependencyDashboard",
     "config:recommended",
     ":disableDependencyDashboard"
   ],
@@ -15,6 +29,10 @@
   "separateMinorPatch": false,
   "pruneStaleBranches": true,
   "rebaseWhen": "always",
+  "force": {
+    "createPr": true,
+    "createPrEvenIfClosed": true
+  },
 
   "customManagers": [
     {
@@ -57,15 +75,6 @@
       ],
       "versioning": "regex:^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$",
       "separateMajorMinor": false
-    },
-    {
-      "matchPaths": ["bundle/manifests/gpu-operator-certified.clusterserviceversion.yaml"],
-      "matchDatasources": ["docker"],
-      "postUpgradeTasks": {
-        "commands": ["bash .github/scripts/fix-multiarch-digest.sh {{{depName}}} {{{newValue}}}"],
-        "fileFilters": ["bundle/manifests/gpu-operator-certified.clusterserviceversion.yaml"],
-        "executionMode": "update"
-      }
     },
     {
       "matchPackageNames": [
