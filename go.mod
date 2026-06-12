@@ -4,7 +4,7 @@ go 1.25.7
 
 require (
 	github.com/Masterminds/sprig/v3 v3.3.0
-	github.com/NVIDIA/go-nvlib v0.9.1-0.20251202135446-d0f42ba016dd
+	github.com/NVIDIA/go-nvlib v0.11.0
 	github.com/NVIDIA/k8s-kata-manager v0.2.3
 	github.com/NVIDIA/k8s-operator-libs v0.0.0-20260215183545-a0a0256b9c5e
 	github.com/NVIDIA/nvidia-container-toolkit v1.19.0
@@ -111,7 +111,7 @@ require (
 	golang.org/x/net v0.49.0 // indirect
 	golang.org/x/oauth2 v0.34.0 // indirect
 	golang.org/x/sync v0.19.0 // indirect
-	golang.org/x/sys v0.41.0 // indirect
+	golang.org/x/sys v0.46.0 // indirect
 	golang.org/x/term v0.40.0 // indirect
 	golang.org/x/text v0.33.0 // indirect
 	golang.org/x/time v0.14.0 // indirect
