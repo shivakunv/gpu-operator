@@ -20,8 +20,8 @@ github.com/Masterminds/sprig/v3
 # github.com/Mellanox/maintenance-operator/api v0.3.0
 ## explicit; go 1.24.11
 github.com/Mellanox/maintenance-operator/api/v1alpha1
-# github.com/NVIDIA/go-nvlib v0.9.1-0.20251202135446-d0f42ba016dd
-## explicit; go 1.20
+# github.com/NVIDIA/go-nvlib v0.12.0
+## explicit; go 1.25.0
 github.com/NVIDIA/go-nvlib/pkg/nvmdev
 github.com/NVIDIA/go-nvlib/pkg/nvpci
 github.com/NVIDIA/go-nvlib/pkg/nvpci/bytes
@@ -452,8 +452,8 @@ golang.org/x/oauth2/internal
 # golang.org/x/sync v0.19.0
 ## explicit; go 1.24.0
 golang.org/x/sync/errgroup
-# golang.org/x/sys v0.41.0
-## explicit; go 1.24.0
+# golang.org/x/sys v0.47.0
+## explicit; go 1.25.0
 golang.org/x/sys/plan9
 golang.org/x/sys/unix
 golang.org/x/sys/windows
