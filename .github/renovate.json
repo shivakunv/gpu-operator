@@ -56,6 +56,30 @@
         "(?:value|image):\\s*[\"']?(?<depName>[^:\"'\\s]+):(?<currentValue>[^@\"'\\s]+)@(?<currentDigest>sha256:[a-f0-9]{64})"
       ],
       "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "versions.mk"
+      ],
+      "matchStrings": [
+        "GOLANG_VERSION \\?= (?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "depNameTemplate": "go",
+      "datasourceTemplate": "golang-version",
+      "versioningTemplate": "semver"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "docker/Dockerfile"
+      ],
+      "matchStrings": [
+        "FROM golang:(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "depNameTemplate": "go",
+      "datasourceTemplate": "golang-version",
+      "versioningTemplate": "semver"
     }
   ],
   "labels": [
@@ -64,6 +88,7 @@
   ],
   "packageRules": [
     {
+      "matchFileNames": ["deployments/gpu-operator/values.yaml"],
       "matchPackageNames": [
         "nvcr.io/nvidia/cloud-native/k8s-driver-manager",
         "nvcr.io/nvidia/cloud-native/k8s-kata-manager",
@@ -71,38 +96,49 @@
         "nvcr.io/nvidia/cloud-native/k8s-cc-manager",
         "nvcr.io/nvidia/cloud-native/nvidia-sandbox-device-plugin",
         "nvcr.io/nvidia/kubevirt-gpu-device-plugin",
-        "nvcr.io/nvidia/k8s-device-plugin"
-      ],
-      "versioning": "regex:^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$",
-      "separateMajorMinor": false
-    },
-    {
-      "matchPackageNames": [
+        "nvcr.io/nvidia/k8s-device-plugin",
         "nvcr.io/nvidia/cloud-native/k8s-mig-manager"
       ],
       "versioning": "regex:^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$",
       "separateMajorMinor": false
     },
     {
-      "matchPaths": ["deployments/gpu-operator/values.yaml"],
-      "matchPackageNames": ["nvcr.io/nvidia/cuda"],
-      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-base-ubi9$",
-      "separateMajorMinor": false
-    },
-    {
-      "matchPackageNames": ["nvcr.io/nvidia/k8s/dcgm-exporter"],
-      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-(?<build>\\d+)\\.(?<revision>\\d+)\\.(?<compatibility>\\d+)-distroless$",
-      "separateMajorMinor": false
-    },
-    {
-      "matchPackageNames": ["nvcr.io/nvidia/cloud-native/dcgm"],
-      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-(?<revision>\\d+)-ubi9$",
-      "separateMajorMinor": false
-    },
-    {
-      "matchPackageNames": ["nvcr.io/nvidia/k8s/container-toolkit"],
-      "versioning": "regex:^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:-rc\\.(?<prerelease>\\d+))?$",
+      "matchFileNames": [
+        "deployments/gpu-operator/values.yaml",
+        "bundle/manifests/gpu-operator-certified.clusterserviceversion.yaml"
+      ],
+      "matchPackageNames": [
+        "nvcr.io/nvidia/k8s/container-toolkit"
+      ],
+      "versioning": "regex:^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:-(?<prerelease>rc\\.\\d+))?$",
       "ignoreUnstable": false,
+      "separateMajorMinor": false
+    },
+    {
+      "matchFileNames": [
+        "deployments/gpu-operator/values.yaml",
+        "bundle/manifests/gpu-operator-certified.clusterserviceversion.yaml"
+      ],
+      "matchPackageNames": [
+        "nvcr.io/nvidia/k8s/dcgm-exporter"
+      ],
+      "versioning": "regex:^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-\\d+\\.\\d+\\.\\d+-distroless$",
+      "separateMajorMinor": false
+    },
+    {
+      "matchFileNames": ["bundle/manifests/gpu-operator-certified.clusterserviceversion.yaml"],
+      "matchPackageNames": [
+        "nvcr.io/nvidia/cloud-native/dcgm"
+      ],
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-(?<build>\\d+)-ubi\\d+$",
+      "separateMajorMinor": false
+    },
+    {
+      "matchFileNames": ["deployments/gpu-operator/values.yaml"],
+      "matchPackageNames": [
+        "nvcr.io/nvidia/cuda"
+      ],
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-base-ubi9$",
       "separateMajorMinor": false
     },
     {
@@ -120,6 +156,16 @@
       "groupName": "{{depName}}",
       "branchTopic": "{{depName}}",
       "commitMessageTopic": "{{depName}}"
+    },
+    {
+      "description": "Group all Go toolchain version bumps",
+      "matchManagers": ["custom.regex"],
+      "matchPackageNames": ["go"],
+      "matchDatasources": ["golang-version"],
+      "groupName": "Go toolchain",
+      "groupSlug": "go-toolchain",
+      "separateMajorMinor": false,
+      "separateMinorPatch": false
     }
   ]
 }
