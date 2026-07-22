@@ -9,7 +9,7 @@ require (
 	github.com/NVIDIA/k8s-operator-libs v0.0.0-20260215183545-a0a0256b9c5e
 	github.com/NVIDIA/nvidia-container-toolkit v1.19.0
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
-	github.com/go-logr/logr v1.4.3
+	github.com/go-logr/logr v1.4.4
 	github.com/go-logr/zapr v1.3.0
 	github.com/onsi/ginkgo/v2 v2.28.1
 	github.com/onsi/gomega v1.39.1
