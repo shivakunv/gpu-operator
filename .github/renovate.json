@@ -29,10 +29,6 @@
   "separateMinorPatch": false,
   "pruneStaleBranches": true,
   "rebaseWhen": "always",
-  "force": {
-    "createPr": true,
-    "createPrEvenIfClosed": true
-  },
 
   "customManagers": [
     {
