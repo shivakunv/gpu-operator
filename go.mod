@@ -19,8 +19,8 @@ require (
 	github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring v0.89.0
 	github.com/prometheus/client_golang v1.23.2
 	github.com/regclient/regclient v0.11.2
-	github.com/sirupsen/logrus v1.9.4
-	github.com/stretchr/testify v1.11.1
+	github.com/sirupsen/logrus v1.10.1
+	github.com/stretchr/testify v1.12.0
 	github.com/urfave/cli/v3 v3.7.0
 	go.uber.org/zap v1.27.1
 	golang.org/x/mod v0.33.0
